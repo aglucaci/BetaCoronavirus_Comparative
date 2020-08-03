@@ -1,31 +1,17 @@
 #!/bin/bash
-# useful commands
-#git clone https://github.com/veg/hyphy.git hyphy-develop
-#cd hyphy-develop
-#git checkout origin/develop
-#cmake .
-#make -j MP
-
-
-
-# make -j MPI
-# @Usage: parallel ::: "bash run_blastn_codon_aware_msa.sh"
-#cd ..
 
 clear
 
 MERS="../analysis/blastn_results/MERS"
 SARS="../analysis/blastn_results/SARS"
 SARSSECOND="../analysis/blastn_results/SARS2"
+
 REFERENCEMERS="../data/ReferenceCDS/MERS"
 REFERENCESARS="../data/ReferenceCDS/SARS"
 REFERENCESARSSECOND="../data/ReferenceCDS/SARS2"
 
 HYPHY=$PWD"/hyphy-develop/HYPHYMP"
 RES=$PWD"/hyphy-develop/res"
-
-#git clone https://github.com/veg/hyphy-analyses.git
-
 
 # Helper function
 function run_gene {
@@ -84,11 +70,12 @@ function run_gene {
 }
 #End function
 
-echo Starting...
-echo .
+# ################################################################################################
+# Main subroutine
+# ################################################################################################
 
-# MERS
-#echo $MERS
+echo Starting...
+echo ""
 
 for fasta in $MERS/*.fasta; do
     echo "Aligning: "$fasta
@@ -111,4 +98,7 @@ for fasta in $SARSSECOND/*.fasta; do
     f="$(basename -- $fasta)"
     run_gene $fasta $REFERENCESARSSECOND/$f "SARS2"
 done
-#End of file.
+
+# ################################################################################################
+# End of file
+# ################################################################################################
