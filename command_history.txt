@@ -1,1 +1,2 @@
 bash blastn_genebygene.sh
+bash install_hyphy.sh
