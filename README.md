@@ -1,10 +1,10 @@
 # Initial Pipeline (8.3.2020)
 
 
-1. Get Genomic data from ViPR (described in writeup)
+<b>1.</b> Get Genomic data from ViPR (described in writeup)
 2. Get reference sequence for each gene (Orf1a, Orf1b, S, M, N, E, and nsps) in each viral species from NCBI.
 3. Makeblastdb and Blastn (to split gene by gene, and to get nsps from polyprotein) using references.
-4. QA on blast results (local)
+4. QA on blast results (local) 
 5a. Codon aware MSA (with mafft)
 5b. QA on Codon aware MSA's
 5c. TN93 Calculations
