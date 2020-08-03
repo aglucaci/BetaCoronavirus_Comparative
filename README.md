@@ -6,13 +6,13 @@
 3. Makeblastdb and Blastn (to split gene by gene, and to get nsps from polyprotein) using references.<br>
 4. QA on blast results (local) <br>
 5a. Codon aware MSA (with mafft)<br>
-5b. QA on Codon aware MSA's<br>
-5c. TN93 Calculations<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 5b. QA on Codon aware MSA's<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 5c. TN93 Calculations<br>
 6a. RaxML (on individual genes in each viral species)<br>
-6b. QA on RAXML trees <br>
+&nbsp;&nbsp;&nbsp;&nbsp; 6b. QA on RAXML trees <br>
 7. Selection Analyses: MEME, BUSTEDS, aBSREL<br>
 8. Mafft merge (alignments)<br>
 9a. RaxML on combined gene alignments<br>
-9b. QA on Trees<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 9b. QA on Trees<br>
 10. Partition lineages with phylotree<br>
 11. Selection Analyses: RELAX and Contrast-FEL<br>
