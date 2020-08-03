@@ -1,1 +1,1 @@
-bash blastn
+bash blastn_genebygene.sh
