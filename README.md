@@ -1,4 +1,4 @@
-# BetaCoronavirus_Comparative
+# Initial Pipeline (8.3.2020)
 
 
 1. Get Genomic data from ViPR (described in writeup)
