@@ -1,3 +1,4 @@
 bash blastn_genebygene.sh
 bash install_hyphy.sh
 qsub -V -q epyc -l nodes=1:ppn=16 -N BLASTN_CODON_AWARE_MSA run_blastn_codon_aware_msa.sh
+bash install_tn93.sh
