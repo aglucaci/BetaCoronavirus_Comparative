@@ -33,8 +33,7 @@ labels = {
     "blocker" : "blocker_label";
 };
 
-console.log("");
-console.log("They will be replaced with the following labels");
+console.log("\nThey will be replaced with the following labels");
 console.log(labels);
 console.log("");
 
@@ -53,17 +52,16 @@ console.log("## ##############################################################")
 
 //Implement a Keyword Argument for the tree, not just user input request.
 
-KeywordArgument ("tree", "A phylogenetic tree (optionally annotated with {})", null, "Please select a tree file for the data:");
+KeywordArgument ("tree", "A phylogenetic tree (optionally annotated with {})", tree);
+tree_location = tree;
+//tree = io.PromptUserForFilePath ("Input the tree file");
 
-console.log(terms.tree);
+console.log(tree);
 
 tree = trees.LoadAnnotatedTopology (TRUE);
 ts = tree[^"terms.trees.newick_with_lengths"];
 
 Topology T = ts;
-
-// This prints the tree.
-//console.log (T);
 
 console.log("## ##############################################################");
 console.log("## Processing utility");
@@ -82,13 +80,7 @@ utility.ForEachPair (regexp.PartitionByRegularExpressions (BranchName (T,-1), re
 	 '
 );
 
-// Modification attempted.
-//if (null != tag) {
-// utility.ForEach (_leaves_, "_leaf_", "node_labels[_leaf_]=tag");
-//}
-
-console.log("");
-console.log("## ##############################################################");
+console.log("\n## ##############################################################");
 console.log ("## Moving to next part (printing partitioned/annotated tree)");
 console.log("## ##############################################################");
 console.log("");
@@ -104,16 +96,17 @@ console.log ("## Saving to file");
 console.log("## ##############################################################");
 console.log("");
 
-KeywordArgument ("output", "Write the resulting PARTITIONED NEWICK to this file (default is to save to the same path as the input tree file + '.partitioned.nwk')", 'TEST');
 
-//KeywordArgument ("output", "Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'FEL.json')", fel.codon_data_info [terms.json.json]);
-output = "AAAA";
-console.log(output);
+KeywordArgument ("output", "Write the resulting PARTITIONED NEWICK to this file (default is to save to the same path as the input tree file + '.partitioned.nwk')", output);
+output = io.PromptUserForFilePath ("Save the resulting PARTITIONED NEWICK file to");
 
-// Save this output string
-//console.log (finalTree);
+//output = output + '.partitioned.nwk';
+console.log (tree_location);
+console.log("Saving annotated newick string to: " + output);
 
+fprintf (output, finalTree);
 
+console.log ("");
 // ####################################################################################################
 // Helper Functions
 // ####################################################################################################
@@ -129,3 +122,7 @@ function relabel_and_annotate (node_name) {
 // ####################################################################################################
 // END OF FILE
 // ####################################################################################################
+
+
+// How to invoke this batch file
+// hyphy annotator.bf --tree /Users/user/Downloads/data_12/fasta/MAY.combined_M.fasta_protein_aligned.cat.merged.compressed.codon.fas.raxml.bestTree --output MAY.combined_M.fasta_protein_aligned.cat.merged.compressed.codon.fas.raxml.bestTree.partitioned.nwk
