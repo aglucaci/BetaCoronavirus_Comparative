@@ -20,4 +20,5 @@ qsub -V -l nodes=1:ppn=16 -q epyc run_compressed_aln_raxml.sh
 qsub -V -q epyc tn93_codons.sh
 #qsub -V -q epyc tn93.sh
 
-# Step 4 
+# Step 4 - Selection Analyses
+qsub -V -q epyc -l nodes=1:ppn=28 MEME_BUSTEDS_aBSREL.sh
