@@ -1,7 +1,18 @@
-bash blastn_genebygene.sh
+# Dependencies (Installers)
+# MAFFT (already installed)
 bash install_hyphy.sh
-qsub -V -q epyc -l nodes=1:ppn=16 -N BLASTN_CODON_AWARE_MSA run_blastn_codon_aware_msa.sh
 bash install_tn93.sh
-qsub -V -q epyc tn93.sh
 bash install_raxml.sh
+
+
+# Step 1 - Split out ViPR results, gene by gene for each viral species
+bash blastn_genebygene.sh
+
+# Step 2 - Perform a codon-aware msa and create a phylogenetic tree
+qsub -V -q epyc -l nodes=1:ppn=16 -N BLASTN_CODON_AWARE_MSA run_blastn_codon_aware_msa.sh
 qsub -V -l nodes=1:ppn=16 -q epyc run_compressed_aln_raxml.sh
+
+# Step 3 - Perform a TN93 distance calculation (on codon aware msa)
+qsub -V -q epyc tn93.sh
+
+# Step 4 
