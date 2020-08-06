@@ -25,3 +25,6 @@ qsub -V -q epyc tn93_cluster.sh
 
 # Step 4 - Selection Analyses
 qsub -V -q epyc -l nodes=1:ppn=28 MEME_BUSTEDS_aBSREL.sh
+
+# Step 5 - use MAFFT Merge to merge the alignments across genes, and then construct ML Trees.
+qsub -V -q epyc -l nodes=1:ppn=16 MergeAlignments.sh
