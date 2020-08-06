@@ -28,3 +28,7 @@ qsub -V -q epyc -l nodes=1:ppn=28 MEME_BUSTEDS_aBSREL.sh
 
 # Step 5 - use MAFFT Merge to merge the alignments across genes, and then construct ML Trees.
 qsub -V -q epyc -l nodes=1:ppn=16 MergeAlignments.sh
+
+# Step 6 - Partition lineages
+
+# Step 7 - Run RELAX and Constrast-FEL
