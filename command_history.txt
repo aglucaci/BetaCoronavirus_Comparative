@@ -40,3 +40,9 @@ bash launcher_for_annotator.sh
 
 # Step 7 - Run RELAX and Constrast-FEL
 qsub -V -q epyc RELAX_CONTRAST-FEL.sh
+
+# Step 8 - (local analysis)
+#Branch length distributions on raxml trees
+#'Gap analysis' on codon aware alignments
+#TN93 on codon aware alignment
+#TN93 Clustering 
