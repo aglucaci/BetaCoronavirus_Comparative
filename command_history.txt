@@ -20,6 +20,8 @@ qsub -V -q epyc -l nodes=1:ppn=16 -N BLASTN_CODON_AWARE_MSA run_blastn_codon_awa
 # Step 2c
 qsub -V -l nodes=1:ppn=16 -q epyc run_compressed_aln_raxml.sh
 
+# Step 2d - Gap analysis for codon aware msa
+
 # Step 3a - Perform a TN93 distance calculation (on codon aware msa)
 qsub -V -q epyc tn93_codons.sh
 #qsub -V -q epyc tn93.sh
