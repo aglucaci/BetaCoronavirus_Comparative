@@ -5,8 +5,11 @@ bash install_tn93.sh
 bash install_raxml.sh
 
 
-# Step 1 - Split out ViPR results, gene by gene for each viral species
+# Step 1a - Split out ViPR results, gene by gene for each viral species
 bash blastn_genebygene.sh
+
+# Step 1b - QA on blastn
+python36 QA_blastn.py
 
 # Step 2a - Perform a codon-aware msa and create a phylogenetic tree
 qsub -V -q epyc -l nodes=1:ppn=16 -N BLASTN_CODON_AWARE_MSA run_blastn_codon_aware_msa.sh
