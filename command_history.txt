@@ -39,3 +39,4 @@ qsub -V -q epyc -l nodes=1:ppn=16 MergeAlignments.sh
 bash launcher_for_annotator.sh 
 
 # Step 7 - Run RELAX and Constrast-FEL
+qsub -V -q epyc RELAX_CONTRAST-FEL.sh
