@@ -8,7 +8,8 @@ bash install_raxml.sh
 # Step 1a - Split out ViPR results, gene by gene for each viral species
 bash blastn_genebygene.sh
 
-# Step 1b - QA on blastn
+# Step 1b - QA on blastn, this filters the results of blastn search that have less than 99% NT content for that gene
+# meaning, it filters out sequences that are less than 99% of the sequence length
 python36 QA_blastn.py
 
 # Step 2a - Perform a codon-aware msa and create a phylogenetic tree
