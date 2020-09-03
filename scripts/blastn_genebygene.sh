@@ -29,15 +29,17 @@
 # These are the files I pulled down from VIPR, whole genomes.
 # sed -i '' 's/ /_/g' foo.fa
 
-clear
+#clear
 echo "# Blastn - gene by gene splitting for Coronaviridae"
 dt=$(date '+%d/%m/%Y %H:%M:%S');
 echo "# Starting: "$dt
 
+BASEDIR=$1
+
 #Set up output directories.
 echo "# Creating output directories"
-mkdir -p ../analysis
-mkdir -p ../analysis/blastn_results
+mkdir -p $BASEDIR/analysis
+mkdir -p $BASEDIR/analysis/blastn_results
 
 #Declares
 MAKEBLASTDB="/usr/bin/makeblastdb"
@@ -45,29 +47,38 @@ BLASTN="/usr/bin/blastn"
 
 # Replace spaces in sequences IDs with underscores
 echo "# 'sed' Changing spaces in IDs to underscores"
-sed -i "s/ /i_/g" ../data/VIPR/MERS/GenomicFastaResults.fasta
-sed -i "s/ /_/g" ../data/VIPR/SARS/GenomicFastaResults.fasta
-sed -i "s/ /_/g" ../data/VIPR/SARS2/GenomicFastaResults.fasta
+sed -i "s/ /i_/g" $BASEDIR/data/VIPR/MERS/GenomicFastaResults.fasta
+sed -i "s/ /_/g" $BASEDIR/data/VIPR/SARS/GenomicFastaResults.fasta
+sed -i "s/ /_/g" $BASEDIR/data/VIPR/SARS2/GenomicFastaResults.fasta
+sed -i "s/ /_/g" $BASEDIR/data/VIPR/NL63/GenomicFastaResults.fasta
+sed -i "s/ /_/g" $BASEDIR/data/VIPR/229E/GenomicFastaResults.fasta
+sed -i "s/ /_/g" $BASEDIR/data/VIPR/OC43/GenomicFastaResults.fasta
+sed -i "s/ /_/g" $BASEDIR/data/VIPR/HKU1/GenomicFastaResults.fasta
+
+
 
 # make blast db of the VIPR results
 echo "# Creating blastdb's"
-makeblastdb -in ../data/VIPR/MERS/GenomicFastaResults.fasta -dbtype nucl -out MERS_db
-makeblastdb -in ../data/VIPR/SARS/GenomicFastaResults.fasta -dbtype nucl -out SARS_db
-makeblastdb -in ../data/VIPR/SARS2/GenomicFastaResults.fasta -dbtype nucl -out SARS2_db
+/usr/bin/makeblastdb -in $BASEDIR/data/VIPR/MERS/GenomicFastaResults.fasta -dbtype nucl -out MERS_db
+/usr/bin/makeblastdb -in $BASEDIR/data/VIPR/SARS/GenomicFastaResults.fasta -dbtype nucl -out SARS_db
+/usr/bin/makeblastdb -in $BASEDIR/data/VIPR/SARS2/GenomicFastaResults.fasta -dbtype nucl -out SARS2_db
+/usr/bin/makeblastdb -in $BASEDIR/data/VIPR/NL63/GenomicFastaResults.fasta -dbtype nucl -out NL63_db
+/usr/bin/makeblastdb -in $BASEDIR/data/VIPR/HKU1/GenomicFastaResults.fasta -dbtype nucl -out HKU1_db
+/usr/bin/makeblastdb -in $BASEDIR/data/VIPR/229E/GenomicFastaResults.fasta -dbtype nucl -out 229E_db
+/usr/bin/makeblastdb -in $BASEDIR/data/VIPR/OC43/GenomicFastaResults.fasta -dbtype nucl -out OC43_db
 
-#pause
 
 #Calculate max target seqs? SARS2 will have the most sequences
 #MaxCount=$(grep -c "^>" ../data/VIPR/SARS2/GenomicFastaResults.fasta)
 MaxCount=11000
 
-for virus in MERS SARS SARS2; do
-    ANALYSIS="../analysis/blastn_results/"$virus
+for virus in MERS SARS SARS2 NL63 HKU1 229E OC43; do
+    ANALYSIS=$BASEDIR"/analysis/blastn_results/"$virus
     echo ""
     echo "# Making directory: "$ANALYSIS
     mkdir -p $ANALYSIS
     
-    FILES="../data/ReferenceCDS/"$virus"/*.fasta"
+    FILES=$BASEDIR"/data/ReferenceCDS/"$virus"/*.fasta"
     for fasta in $FILES; do
         if [ ! -f "$fasta" ]; then
             echo "$fasta does not exist."
@@ -78,10 +89,10 @@ for virus in MERS SARS SARS2; do
         f="$(basename -- $fasta)"
         
         # Standard Blast
-        blastn -query $fasta -db $virus"_db" -max_hsps 1 -max_target_seqs $MaxCount -out $ANALYSIS/$f".txt"
+        /usr/bin/blastn -query $fasta -db $virus"_db" -max_hsps 1 -max_target_seqs $MaxCount -out $ANALYSIS/$f".txt"
         
         # Blast output to fasta
-        blastn -query $fasta -db $virus"_db" -max_hsps 1 -max_target_seqs $MaxCount -outfmt '6 sseqid sseq' | awk 'BEGIN{FS="\t"; OFS="\n"}{gsub(/-/, "", $2); print ">"$1,$2}' > $ANALYSIS/$f
+        /usr/bin/blastn -query $fasta -db $virus"_db" -max_hsps 1 -max_target_seqs $MaxCount -outfmt '6 sseqid sseq' | awk 'BEGIN{FS="\t"; OFS="\n"}{gsub(/-/, "", $2); print ">"$1,$2}' > $ANALYSIS/$f
     done
 done
 

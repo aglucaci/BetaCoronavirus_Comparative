@@ -3,8 +3,9 @@
 
 git clone https://github.com/stamatak/standard-RAxML.git
 
-make -f Makefile.AVX.MPI.gcc
-
+cd standard-RAxML
+#make -f Makefile.AVX.MPI.gcc
+make -f Makefile.MPI.gcc
 rm *.o
 
 

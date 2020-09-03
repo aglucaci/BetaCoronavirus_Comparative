@@ -1,8 +1,12 @@
 #!/bin/bash
-#@USAGE: qsub -V -q epyc tn93_codons.sh
-clear
+#PBS -N Beta_tn93_codons
+#PBS -l walltime=999:00:00
 
-BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+#@USAGE: qsub -V -q epyc tn93_codons.sh
+#clear
+
+#BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+BASEDIR=$1
 
 TN=$BASEDIR"/scripts/tn93/tn93"
 DIR=$BASEDIR"/analysis/Alignments"
@@ -13,7 +17,7 @@ echo "## Software: "$TN
 echo "## Input directory: "$DIR
 echo ""
 
-for virus in MERS SARS SARS2; do
+for virus in MERS SARS SARS2 229E OC43 NL63 HKU1; do
     SAVE=$DIR/$virus/compressed/tn93
     echo "SAVE Directory: "$SAVE
     mkdir -p $SAVE
@@ -52,14 +56,6 @@ done
 # end of file
 
 
-#Helper command to clear out results
-# rm -f ../analysis/Alignments/MERS/nucleotide/*.fasta
-# rm -f ../analysis/Alignments/SARS/nucleotide/*.fasta
-# rm -f ../analysis/Alignments/SARS2/nucleotide/*.fasta
-
-# rm -r ../analysis/Alignments/MERS/nucleotide/tn93
-# rm -r ../analysis/Alignments/SARS/nucleotide/tn93
-# rm -r ../analysis/Alignments/SARS2/nucleotide/tn93
 
 
 

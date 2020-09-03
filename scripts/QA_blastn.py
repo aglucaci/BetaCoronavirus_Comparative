@@ -26,13 +26,18 @@ from scipy import stats
 # =============================================================================
 # Declares
 # =============================================================================
-BASEDIR = "/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020/"
+#BASEDIR = "/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020/"
+
+BASEDIR = sys.argv[1]
 path = BASEDIR + "/analysis/blastn_results"
+
+THRESHOLD_PARAM = 0.95
 
 # =============================================================================
 # Helper function
 # =============================================================================
 def nt_content(filename,path,output_dir):
+    global THRESHOLD_PARAM
     count = 0
     nt_distribution = [] # NT content distribution among the sequences
     with open(filename, "r") as handle:
@@ -46,7 +51,7 @@ def nt_content(filename,path,output_dir):
     
     #thresholding
     #print(max(nt_distribution) * 0.99)
-    threshold = int(max(nt_distribution) * 0.99)
+    threshold = int(max(nt_distribution) * THRESHOLD_PARAM)
     print("\t# Threshold:", threshold)
     #how many pass the filter
     passed = [x for x in nt_distribution if x >= threshold]
@@ -92,7 +97,7 @@ def nt_content(filename,path,output_dir):
 # Gap analysis
 
 
-for virus in ["MERS", "SARS", "SARS2"]:
+for virus in ["MERS", "SARS", "SARS2", "NL63", "HKU1", "229E", "OC43"]:
     newpath = os.path.join(path, virus)
     print("## Checking:", newpath)
     output_dir = os.path.join(newpath, "blastn_QA_filtered")

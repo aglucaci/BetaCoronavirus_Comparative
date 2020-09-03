@@ -16,7 +16,11 @@ LoadFunctionLibrary("libv3/UtilityFunctions.bf");
 reg_exp = {{
     "Middle_East",
     "Severe_acute_respiratory_syndrome_coronavirus_2",
-    "SARS_coronavirus"
+    "SARS_coronavirus",
+    "NL63",
+    "OC43",
+    "HKU1",
+    "229E"
 }};
 
 console.log("## ##############################################################");
@@ -30,6 +34,10 @@ labels = {
     "Middle_East" : "MERS",
     "SARS_coronavirus" : "SARS",
     "Severe_acute_respiratory_syndrome_coronavirus_2" : "SARS2",
+    "NL63" : "NL63",
+    "OC43" : "OC43",
+    "HKU1" : "HKU1",
+    "229E" : "229E",
     "blocker" : "blocker_label";
 };
 

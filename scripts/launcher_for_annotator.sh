@@ -1,8 +1,9 @@
 #!/bin/bash
-
+#PBS -N Beta_lineage_annotator
 clear
 
-BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+#BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+BASEDIR=$1
 
 
 

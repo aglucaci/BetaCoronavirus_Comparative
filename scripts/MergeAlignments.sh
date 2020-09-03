@@ -1,7 +1,7 @@
 #!/bin/bash
-#PBS -N MERGEAlignments
+#PBS -N Beta_MERGEAlignments
 #PBS -l nodes=1:ppn=28
-#PBS -l walltime=99:0:0:0
+#PBS -l walltime=999:0:0:0
 
 #@Author: Alexander G Lucaci
 #@Usage: qsub -V -q epyc MergeAlignments.sh
@@ -9,7 +9,8 @@
 # This script combines SARS, SARS2, MERS genes together
 
 #We do this for S, M, N ,E, ORF1ab, ORF1a, ORF1b
-BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+#BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+BASEDIR=$1
 
 #PREMSA="hyphy-analyses/codon-msa/pre-msa.bf"
 POSTMSA=$BASEDIR"/scripts/hyphy-analyses/codon-msa/post-msa.bf"
@@ -49,7 +50,8 @@ function catProteinMSAs {
         then
             echo 6
         else 
-            cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f > $OUTDIR"/combined_"$f
+            echo cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f
+            cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f
         fi
     done
 
@@ -77,7 +79,8 @@ function catNuclFiles {
         then
             echo 4
         else
-            cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f > $OUTDIR"/combined_"$f  
+            echo cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f  
+            cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f  
         fi
     done
 
@@ -113,7 +116,8 @@ function MakeRubyTables {
         then
             echo 3
         else
-            $RUBY $BASEDIR"/scripts/makemergetable.rb" $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f > $OUTDIR"/combined_"$f".table" 
+            echo $RUBY $BASEDIR"/scripts/makemergetable.rb" $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f > $OUTDIR"/combined_"$f".table" 
+            $RUBY $BASEDIR"/scripts/makemergetable.rb" $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f".table" 
         fi
     done
 }
@@ -145,6 +149,7 @@ function DoMafftMerge {
 
             #$MAFFT --localpair --maxiterate 100 --merge $FILE".table" $FILE > $OUTDIR/"merged_"$f 
 
+            echo $MAFFT --merge $FILE".table" $FILE > $OUTDIR/"merged_"$f 
             $MAFFT --merge $FILE".table" $FILE > $OUTDIR/"merged_"$f 
             #echo $FILE
         fi
@@ -183,6 +188,7 @@ function DoPostMSAMerge {
          then
              echo "Exists POSTMSAMerge"
          else 
+             echo mpirun -np 28 $HYPHYMPI LIBPATH=$RES $POSTMSA --protein-msa $FILE --nucleotide-sequences $nucl --output $output
              mpirun -np 28 $HYPHYMPI LIBPATH=$RES $POSTMSA --protein-msa $FILE --nucleotide-sequences $nucl --output $output
          fi
     done
@@ -207,7 +213,8 @@ function MakeTrees {
             echo 1
         else
             #$RAXMLHPCMPI --msa $FILE --model GTR+G --force
-            mpirun -np 28 $RAXMLHPCMPI -m GTRGAMMA -s $FILE -n $f -p 12345 -N 10 -w $OUTDIR
+            echo mpirun -np 28 $RAXMLHPCMPI -m GTRGAMMA -s $FILE -n $f -p 12345 -N 2 -w $OUTDIR
+            mpirun -np 28 $RAXMLHPCMPI -m GTRGAMMA -s $FILE -n $f -p 12345 -N 2 -w $OUTDIR
         fi
 
     done
@@ -226,5 +233,5 @@ DoMafftMerge
 DoPostMSAMerge
 MakeTrees
 
-
+exit 0
 #end of file

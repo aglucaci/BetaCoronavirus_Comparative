@@ -1,0 +1,315 @@
+## Checking: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS
+# Creating output directory: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/blastn_QA_filtered
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/E.fasta
+	# Threshold: 236
+	# Number that would pass: 139
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/blastn_QA_filtered/E.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(249, 249), mean=249.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/M.fasta
+	# Threshold: 627
+	# Number that would pass: 139
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/blastn_QA_filtered/M.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(660, 660), mean=660.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/N.fasta
+	# Threshold: 1179
+	# Number that would pass: 138
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/blastn_QA_filtered/N.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(732, 1242), mean=1238.2661870503598, variance=1871.066312167657, skewness=-11.65918278238151, kurtosis=133.96012148844807)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/ORF1a.fasta
+	# Threshold: 12497
+	# Number that would pass: 137
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/blastn_QA_filtered/ORF1a.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(8782, 13155), mean=13099.15107913669, variance=212161.05671984152, skewness=-8.42069333593128, kurtosis=70.29062075516217)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/ORF1b.fasta
+	# Threshold: 7677
+	# Number that would pass: 138
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/blastn_QA_filtered/ORF1b.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(2181, 8082), mean=8039.546762589928, variance=250516.5539568345, skewness=-11.662214471394858, kurtosis=134.00724637681162)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/S.fasta
+	# Threshold: 3858
+	# Number that would pass: 138
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/MERS/blastn_QA_filtered/S.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(2781, 4062), mean=4052.7697841726617, variance=11805.236471692211, skewness=-11.662171253040764, kurtosis=134.00657855425928)
+
+
+## Checking: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS
+# Creating output directory: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/blastn_QA_filtered
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/E.fasta
+	# Threshold: 219
+	# Number that would pass: 53
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/blastn_QA_filtered/E.fasta
+	# Number of sequences (total): 53
+	# DescribeResult(nobs=53, minmax=(231, 231), mean=231.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/M.fasta
+	# Threshold: 632
+	# Number that would pass: 52
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/blastn_QA_filtered/M.fasta
+	# Number of sequences (total): 53
+	# DescribeResult(nobs=53, minmax=(398, 666), mean=660.9433962264151, variance=1355.1698113207547, skewness=-7.072427501871669, kurtosis=48.01923076923074)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/N.fasta
+	# Threshold: 1205
+	# Number that would pass: 53
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/blastn_QA_filtered/N.fasta
+	# Number of sequences (total): 53
+	# DescribeResult(nobs=53, minmax=(1269, 1269), mean=1269.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/ORF1a.fasta
+	# Threshold: 12472
+	# Number that would pass: 53
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/blastn_QA_filtered/ORF1a.fasta
+	# Number of sequences (total): 53
+	# DescribeResult(nobs=53, minmax=(13127, 13129), mean=13127.037735849057, variance=0.07547169811320754, skewness=7.072427501869026, kurtosis=48.01923076920582)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/ORF1b.fasta
+	# Threshold: 7701
+	# Number that would pass: 53
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/blastn_QA_filtered/ORF1b.fasta
+	# Number of sequences (total): 53
+	# DescribeResult(nobs=53, minmax=(8096, 8107), mean=8096.226415094339, variance=2.2939042089985486, skewness=6.9872440034859435, kurtosis=47.185175253094)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/S.fasta
+	# Threshold: 3579
+	# Number that would pass: 53
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS/blastn_QA_filtered/S.fasta
+	# Number of sequences (total): 53
+	# DescribeResult(nobs=53, minmax=(3768, 3768), mean=3768.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+
+## Checking: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2
+# Creating output directory: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/blastn_QA_filtered
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/E.fasta
+	# Threshold: 216
+	# Number that would pass: 10173
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/blastn_QA_filtered/E.fasta
+	# Number of sequences (total): 10187
+	# DescribeResult(nobs=10187, minmax=(124, 228), mean=227.8830862864435, variance=10.526188471151993, skewness=-28.23826029617594, kurtosis=803.8578947402193)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/M.fasta
+	# Threshold: 635
+	# Number that would pass: 10161
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/blastn_QA_filtered/M.fasta
+	# Number of sequences (total): 10187
+	# DescribeResult(nobs=10187, minmax=(347, 669), mean=668.4666732109552, variance=126.06552479433724, skewness=-23.460553558178265, kurtosis=571.9562164720642)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/N.fasta
+	# Threshold: 1197
+	# Number that would pass: 9855
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/blastn_QA_filtered/N.fasta
+	# Number of sequences (total): 10187
+	# DescribeResult(nobs=10187, minmax=(364, 1260), mean=1245.5247864925886, variance=6551.140829708485, skewness=-5.627150018134519, kurtosis=30.969804147799643)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/ORF1a.fasta
+	# Threshold: 12544
+	# Number that would pass: 9565
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/blastn_QA_filtered/ORF1a.fasta
+	# Number of sequences (total): 10187
+	# DescribeResult(nobs=10187, minmax=(1308, 13205), mean=12849.280455482478, variance=2128246.947549449, skewness=-4.253551855921059, kurtosis=17.618474331885363)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/ORF1b.fasta
+	# Threshold: 7686
+	# Number that would pass: 9373
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/blastn_QA_filtered/ORF1b.fasta
+	# Number of sequences (total): 10187
+	# DescribeResult(nobs=10187, minmax=(1162, 8091), mean=7894.483066653578, variance=478669.7618131747, skewness=-4.025464696614819, kurtosis=18.539009053248066)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/S.fasta
+	# Threshold: 3630
+	# Number that would pass: 9083
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/SARS2/blastn_QA_filtered/S.fasta
+	# Number of sequences (total): 10187
+	# DescribeResult(nobs=10187, minmax=(469, 3822), mean=3694.6490625306765, variance=149354.70590993002, skewness=-3.1308677054730585, kurtosis=9.613648449313274)
+
+
+## Checking: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63
+# Creating output directory: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/blastn_QA_filtered
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/E.fasta
+	# Threshold: 222
+	# Number that would pass: 61
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/blastn_QA_filtered/E.fasta
+	# Number of sequences (total): 61
+	# DescribeResult(nobs=61, minmax=(234, 234), mean=234.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/M.fasta
+	# Threshold: 646
+	# Number that would pass: 61
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/blastn_QA_filtered/M.fasta
+	# Number of sequences (total): 61
+	# DescribeResult(nobs=61, minmax=(681, 681), mean=681.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/N.fasta
+	# Threshold: 1077
+	# Number that would pass: 61
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/blastn_QA_filtered/N.fasta
+	# Number of sequences (total): 61
+	# DescribeResult(nobs=61, minmax=(1134, 1134), mean=1134.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/ORF1a.fasta
+	# Threshold: 11547
+	# Number that would pass: 55
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/blastn_QA_filtered/ORF1a.fasta
+	# Number of sequences (total): 61
+	# DescribeResult(nobs=61, minmax=(3363, 12155), mean=11619.639344262296, variance=3575406.167759563, skewness=-3.6424519384827536, kurtosis=11.876826736341664)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/ORF1b.fasta
+	# Threshold: 7650
+	# Number that would pass: 58
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/blastn_QA_filtered/ORF1b.fasta
+	# Number of sequences (total): 61
+	# DescribeResult(nobs=61, minmax=(4409, 8053), mean=7875.4098360655735, variance=474876.01256830606, skewness=-4.483255284379096, kurtosis=18.94126361823644)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/S.fasta
+	# Threshold: 3867
+	# Number that would pass: 57
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/NL63/blastn_QA_filtered/S.fasta
+	# Number of sequences (total): 61
+	# DescribeResult(nobs=61, minmax=(1539, 4071), mean=3927.8196721311474, variance=290608.5169398907, skewness=-3.5859143419661814, kurtosis=11.092211382050596)
+
+
+## Checking: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1
+# Creating output directory: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/blastn_QA_filtered
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/E.fasta
+	# Threshold: 236
+	# Number that would pass: 19
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/blastn_QA_filtered/E.fasta
+	# Number of sequences (total): 20
+	# DescribeResult(nobs=20, minmax=(168, 249), mean=244.95, variance=328.05, skewness=-4.12948320967011, kurtosis=15.052631578947356)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/M.fasta
+	# Threshold: 638
+	# Number that would pass: 23
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/blastn_QA_filtered/M.fasta
+	# Number of sequences (total): 24
+	# DescribeResult(nobs=24, minmax=(197, 672), mean=652.2083333333334, variance=9401.041666666668, skewness=-4.587317109255646, kurtosis=19.04347826086957)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/N.fasta
+	# Threshold: 1259
+	# Number that would pass: 25
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/blastn_QA_filtered/N.fasta
+	# Number of sequences (total): 25
+	# DescribeResult(nobs=25, minmax=(1284, 1326), mean=1322.92, variance=114.66000000000001, skewness=-3.145195226127434, kurtosis=8.009119244162067)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/ORF1a.fasta
+	# Threshold: 12767
+	# Number that would pass: 8
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/blastn_QA_filtered/ORF1a.fasta
+	# Number of sequences (total): 25
+	# DescribeResult(nobs=25, minmax=(3161, 13439), mean=10134.2, variance=9319226.25, skewness=-0.6806458015536323, kurtosis=-0.4905514584010233)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/ORF1b.fasta
+	# Threshold: 7746
+	# Number that would pass: 18
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/blastn_QA_filtered/ORF1b.fasta
+	# Number of sequences (total): 25
+	# DescribeResult(nobs=25, minmax=(3190, 8154), mean=7161.32, variance=2882052.643333333, skewness=-1.2366212893390887, kurtosis=-0.17599634926113517)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/S.fasta
+	# Threshold: 3867
+	# Number that would pass: 21
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/HKU1/blastn_QA_filtered/S.fasta
+	# Number of sequences (total): 24
+	# DescribeResult(nobs=24, minmax=(854, 4071), mean=3773.0833333333335, variance=684033.5579710145, skewness=-2.6034469006058085, kurtosis=5.460955212949385)
+
+
+## Checking: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E
+# Creating output directory: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/blastn_QA_filtered
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/E.fasta
+	# Threshold: 222
+	# Number that would pass: 27
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/blastn_QA_filtered/E.fasta
+	# Number of sequences (total): 27
+	# DescribeResult(nobs=27, minmax=(234, 234), mean=234.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/M.fasta
+	# Threshold: 644
+	# Number that would pass: 27
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/blastn_QA_filtered/M.fasta
+	# Number of sequences (total): 27
+	# DescribeResult(nobs=27, minmax=(678, 678), mean=678.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/N.fasta
+	# Threshold: 1111
+	# Number that would pass: 27
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/blastn_QA_filtered/N.fasta
+	# Number of sequences (total): 27
+	# DescribeResult(nobs=27, minmax=(1152, 1170), mean=1169.3333333333333, variance=12.0, skewness=-4.9029033784545355, kurtosis=22.038461538461107)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/ORF1a.fasta
+	# Threshold: 11629
+	# Number that would pass: 27
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/blastn_QA_filtered/ORF1a.fasta
+	# Number of sequences (total): 27
+	# DescribeResult(nobs=27, minmax=(12221, 12242), mean=12235.777777777777, variance=95.48717948717947, skewness=-0.8922178162190678, kurtosis=-1.203947368421202)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/ORF1b.fasta
+	# Threshold: 7646
+	# Number that would pass: 27
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/blastn_QA_filtered/ORF1b.fasta
+	# Number of sequences (total): 27
+	# DescribeResult(nobs=27, minmax=(8049, 8049), mean=8049.0, variance=0.0, skewness=0.0, kurtosis=-3.0)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/S.fasta
+	# Threshold: 3343
+	# Number that would pass: 27
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/229E/blastn_QA_filtered/S.fasta
+	# Number of sequences (total): 27
+	# DescribeResult(nobs=27, minmax=(3513, 3519), mean=3515.5555555555557, variance=1.8717948717948718, skewness=-0.6235386831937905, kurtosis=1.04513041846519)
+
+
+## Checking: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43
+# Creating output directory: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/blastn_QA_filtered
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/E.fasta
+	# Threshold: 242
+	# Number that would pass: 139
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/blastn_QA_filtered/E.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(251, 255), mean=254.30935251798562, variance=1.4905640704827443, skewness=-1.566624521735892, kurtosis=1.286133938796321)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/M.fasta
+	# Threshold: 662
+	# Number that would pass: 138
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/blastn_QA_filtered/M.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(567, 697), mean=692.0575539568346, variance=114.85173600250234, skewness=-11.557829497026237, kurtosis=132.34117837661915)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/N.fasta
+	# Threshold: 1279
+	# Number that would pass: 139
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/blastn_QA_filtered/N.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(1344, 1347), mean=1346.9568345323742, variance=0.1285580231467, skewness=-8.155648259957886, kurtosis=64.51459854015133)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/ORF1a.fasta
+	# Threshold: 12473
+	# Number that would pass: 135
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/blastn_QA_filtered/ORF1a.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(7415, 13130), mean=13013.899280575539, variance=523344.8448545512, skewness=-6.545023126580842, kurtosis=42.808107941896125)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/ORF1b.fasta
+	# Threshold: 7749
+	# Number that would pass: 137
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/blastn_QA_filtered/ORF1b.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(5842, 8157), mean=8129.215827338129, variance=55332.373370868525, skewness=-8.631589171001062, kurtosis=74.84127285768004)
+
+	# Processing: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/S.fasta
+	# Threshold: 3890
+	# Number that would pass: 139
+	# Saving data to: /home/aglucaci/BetaCoronavirus_Comparative/analysis/blastn_results/OC43/blastn_QA_filtered/S.fasta
+	# Number of sequences (total): 139
+	# DescribeResult(nobs=139, minmax=(4071, 4095), mean=4079.3956834532373, variance=32.24085079762276, skewness=0.4718270791027476, kurtosis=-0.5487307729519371)
+
+

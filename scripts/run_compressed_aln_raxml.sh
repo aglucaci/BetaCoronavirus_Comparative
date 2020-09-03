@@ -1,15 +1,18 @@
 #!/bin/bash
-#PBS -N raxmlHPC-MPI
+#PBS -N Beta_raxmlHPC-MPI
+#PBS -l nodes=1:ppn=64
+#PBS -l walltime=999:00:00
 
-#@USAGE: qsub -V -l nodes=1:ppn=16 -q epyc run_compressed_aln_raxml.sh
+#@USAGE: qsub -V -q epyc run_compressed_aln_raxml.sh
 
 # RAXML Manual: https://cme.h-its.org/exelixis/resource/download/NewManual.pdf
-clear
+#clear
 
-BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+#BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+BASEDIR=$1
 
 RAXMLHPCMPI=$BASEDIR"/scripts/standard-RAxML/raxmlHPC-MPI"
-RAXMLAVX=$BASEDIR"/scripts/standard-RAxML/raxmlHPC-AVX"
+RAXML=/usr/local/bin/raxml-ng-mpi
 
 echo "# Creating output directory"
 mkdir -p $BASEDIR"/analysis/raxml"
@@ -18,7 +21,7 @@ echo "# Starting to create RAxML trees"
 echo ""
 
 
-for virus in MERS SARS SARS2; do
+for virus in MERS SARS SARS2 NL63 HKU1 229E OC43; do
     FILES=$BASEDIR/analysis/Alignments/$virus/compressed/*.fasta
     mkdir -p $BASEDIR"/analysis/raxml/"$virus
 
@@ -35,9 +38,13 @@ for virus in MERS SARS SARS2; do
              #echo $RAXMLAVX -m GTRGAMMA -s $gene -p 12345 -n $f
              #$RAXMLAVX -m GTRGAMMA -s $gene -p 12345 -n $f
 
-             echo mpirun -np 16 $RAXMLHPCMPI -m GTRGAMMA -s $gene -p 12345 -n $f 
-             mpirun -np 16 $RAXMLHPCMPI -m GTRGAMMA -s $gene -p 12345 -n $f -N 10 -w $BASEDIR/analysis/raxml/$virus
+             echo mpirun -np 64 $RAXMLHPCMPI -m GTRGAMMA -s $gene -p 12345 -n $f -N 2 -w $BASEDIR/analysis/raxml/$virus
+             mpirun -np 64 $RAXMLHPCMPI -m GTRGAMMA -s $gene -p 12345 -n $f -N 2 -w $BASEDIR/analysis/raxml/$virus
              
+             #raxml-ng-mpi --msa {input.in_comp} --model GTR+G
+
+             #$RAXML --msa $gene --model GTR+G+I --threads 16 --prefix $BASEDIR/analysis/raxml/$virus/
+
              # Move trees
              #mv $BASEDIR/scripts/RAxML* $BASEDIR/analysis/raxml/$virus 
         fi
@@ -53,6 +60,8 @@ for virus in MERS SARS SARS2; do
     ## Move trees
     #mv $BASEDIR/scripts/RAxML* $BASEDIR/analysis/raxml/$virus 
 done
+
+exit 0
 
 # End of file
 

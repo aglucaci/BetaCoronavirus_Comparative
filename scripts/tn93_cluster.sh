@@ -1,9 +1,12 @@
 #!/bin/bash
-#PBS -N TN93_Cluster
+#PBS -N Beta_TN93_Cluster
+#PBS -l walltime=999:00:00
 #@USAGE: qsub -V -q epyc tn93_cluster.sh
 clear
 
-BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+#BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
+
+BASEDIR=$1
 
 TNCluster=$BASEDIR"/scripts/tn93/tn93-cluster"
 DIR=$BASEDIR"/analysis/Alignments"
@@ -14,7 +17,7 @@ echo "## Software: "$TNCluster
 echo "## Input directory: "$DIR
 echo ""
 
-for virus in MERS SARS SARS2; do
+for virus in MERS SARS SARS2 229E OC43 NL63 HKU1; do
     SAVE=$DIR/$virus/compressed/tn93-cluster
     echo "SAVE Directory: "$SAVE
     mkdir -p $SAVE
@@ -40,7 +43,11 @@ for virus in MERS SARS SARS2; do
             echo "TN93 Cluster calculations file exists"
         else
             echo $TNCluster -t 0.0004 -c all -m json -o $SAVE"/"$f".dst" $FILE
-            $TNCluster -t 0.004 -c all -m json -o $SAVE"/"$f".dst" $FILE
+            $TNCluster -t 0.004 -c all -m json -o $SAVE"/"$f"_0004.dst" $FILE
+            $TNCluster -t 0.008 -c all -m json -o $SAVE"/"$f"_0008.dst" $FILE
+            $TNCluster -t 0.0012 -c all -m json -o $SAVE"/"$f"_0012.dst" $FILE
+            $TNCluster -t 0.0016 -c all -m json -o $SAVE"/"$f"_0016.dst" $FILE
+            $TNCluster -t 0.002 -c all -m json -o $SAVE"/"$f"_002.dst" $FILE
         fi
         echo ""
 
@@ -53,14 +60,6 @@ done
 # end of file
 
 
-#Helper command to clear out results
-# rm -f ../analysis/Alignments/MERS/nucleotide/*.fasta
-# rm -f ../analysis/Alignments/SARS/nucleotide/*.fasta
-# rm -f ../analysis/Alignments/SARS2/nucleotide/*.fasta
-
-# rm -r ../analysis/Alignments/MERS/nucleotide/tn93
-# rm -r ../analysis/Alignments/SARS/nucleotide/tn93
-# rm -r ../analysis/Alignments/SARS2/nucleotide/tn93
 
 
 
