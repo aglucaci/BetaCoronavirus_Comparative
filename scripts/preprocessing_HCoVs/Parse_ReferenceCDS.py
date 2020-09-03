@@ -101,12 +101,14 @@ for folder in FOLDERS:
             print("\t sequence length (unedited)", len(str(SEQ)))
             
             # Cut ORF1a and ORF1b at their respective sites
-            print("\t Cutting:", position_dict[folder]["ORF1a"]["Start"] , position_dict[folder]["ORF1a"]["End"])
+            print("\t Cutting:", position_dict[folder]["ORF1a"]["Start"] - 1 , position_dict[folder]["ORF1a"]["End"] + 1)
             
-            new_SEQ_ORF1a = SEQ[position_dict[folder]["ORF1a"]["Start"] - 1: position_dict[folder]["ORF1a"]["End"]]
+            new_SEQ_ORF1a = SEQ[position_dict[folder]["ORF1a"]["Start"] - 1: position_dict[folder]["ORF1a"]["End"] + 1]
             print("\t sequence length (edited)", len(str(new_SEQ_ORF1a)))
+            print("\t Number of sites:", len(str(new_SEQ_ORF1a)) / 3)
             
             # Save to file (fasta)
+            #record.id = folder + "_" + record.id
             record.seq = new_SEQ_ORF1a
             output = os.path.join(folder, "ORF1a_edited.fasta")
             with open(output, "w") as handle:
@@ -128,12 +130,14 @@ for folder in FOLDERS:
             print("\t sequence length (unedited)", len(str(SEQ)))
             
             # Cut ORF1a and ORF1b at their respective sites
-            print("\t Cutting:",position_dict[folder]["ORF1b"]["Start"] , position_dict[folder]["ORF1b"]["End"] + 2)
+            print("\t Cutting:",position_dict[folder]["ORF1b"]["Start"] - 1 , position_dict[folder]["ORF1b"]["End"] + 2)
             
-            new_SEQ_ORF1b = SEQ[position_dict[folder]["ORF1b"]["Start"] - 1 : position_dict[folder]["ORF1b"]["End"] + 2]
+            new_SEQ_ORF1b = SEQ[position_dict[folder]["ORF1b"]["Start"] + 1: position_dict[folder]["ORF1b"]["End"] + 2]
             print("\t sequence length (edited)", len(str(new_SEQ_ORF1b)))
+            print("\t Number of sites:", len(str(new_SEQ_ORF1b)) / 3)
             
             # Save to file (fasta)
+            #record.id = folder + "_" + record.id
             record.seq = new_SEQ_ORF1b
             output = os.path.join(folder, "ORF1b_edited.fasta")
             with open(output, "w") as handle:
