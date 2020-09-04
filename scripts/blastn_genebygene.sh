@@ -47,7 +47,7 @@ BLASTN="/usr/bin/blastn"
 
 # Replace spaces in sequences IDs with underscores
 echo "# 'sed' Changing spaces in IDs to underscores"
-sed -i "s/ /i_/g" $BASEDIR/data/VIPR/MERS/GenomicFastaResults.fasta
+sed -i "s/ /_/g" $BASEDIR/data/VIPR/MERS/GenomicFastaResults.fasta
 sed -i "s/ /_/g" $BASEDIR/data/VIPR/SARS/GenomicFastaResults.fasta
 sed -i "s/ /_/g" $BASEDIR/data/VIPR/SARS2/GenomicFastaResults.fasta
 sed -i "s/ /_/g" $BASEDIR/data/VIPR/NL63/GenomicFastaResults.fasta
