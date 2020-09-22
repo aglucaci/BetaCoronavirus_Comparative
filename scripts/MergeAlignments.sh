@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -N Beta_MERGEAlignments
 #PBS -l nodes=1:ppn=28
-#PBS -l walltime=999:0:0:0
+#PBS -l walltime=999:00:00
 
 #@Author: Alexander G Lucaci
 #@Usage: qsub -V -q epyc MergeAlignments.sh
@@ -48,7 +48,7 @@ function catProteinMSAs {
 
         if [ -s $OUTDIR"/combined_"$f ];
         then
-            echo 6
+            echo "File exists"
         else 
             echo cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f
             cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f
@@ -77,7 +77,7 @@ function catNuclFiles {
         echo $OUTDIR"/combined_"$f  
         if [ -s $OUTDIR"/combined_"$f ]; 
         then
-            echo 4
+            echo "File exists"
         else
             echo cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f  
             cat $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f  
@@ -114,7 +114,7 @@ function MakeRubyTables {
         
         if [ -s $OUTDIR"/combined_"$f".table" ];
         then
-            echo 3
+            echo "ruby table exists"
         else
             echo $RUBY $BASEDIR"/scripts/makemergetable.rb" $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f > $OUTDIR"/combined_"$f".table" 
             $RUBY $BASEDIR"/scripts/makemergetable.rb" $ALNDIR/MERS/$DIR/$f $ALNDIR/SARS/$DIR/$f $ALNDIR/SARS2/$DIR/$f $ALNDIR/229E/$DIR/$f $ALNDIR/HKU1/$DIR/$f $ALNDIR/NL63/$DIR/$f $ALNDIR/OC43/$DIR/$f > $OUTDIR"/combined_"$f".table" 
@@ -188,8 +188,8 @@ function DoPostMSAMerge {
          then
              echo "Exists POSTMSAMerge"
          else 
-             echo mpirun -np 28 $HYPHYMPI LIBPATH=$RES $POSTMSA --protein-msa $FILE --nucleotide-sequences $nucl --output $output
-             mpirun -np 28 $HYPHYMPI LIBPATH=$RES $POSTMSA --protein-msa $FILE --nucleotide-sequences $nucl --output $output
+             echo mpirun -np 28 $HYPHYMPI LIBPATH=$RES $POSTMSA --protein-msa $FILE --nucleotide-sequences $nucl --output $output --compress Yes
+             mpirun -np 28 $HYPHYMPI LIBPATH=$RES $POSTMSA --protein-msa $FILE --nucleotide-sequences $nucl --output $output --compress Yes
          fi
     done
 }
@@ -225,13 +225,30 @@ function MakeTrees {
 
 
 ## Main -----
+echo "## catting Nucleotide Files"
 catNuclFiles
+
+echo ""
+echo "## catting Protein MSAs"
 catProteinMSAs
+
+echo ""
+echo "## making ruby tables"
 MakeRubyTables
 
+echo ""
+echo "## Performing Mafft Merge"
 DoMafftMerge
+
+echo ""
+echo "## Doing Post MSA Merge"
 DoPostMSAMerge
+
+echo ""
+echo "## Making RAxML Trees"
 MakeTrees
+
+
 
 exit 0
 #end of file

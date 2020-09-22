@@ -32,11 +32,9 @@ REFERENCEHKU1=$BASEDIR"/data/ReferenceCDS/HKU1"
 REFERENCENL63=$BASEDIR"/data/ReferenceCDS/NL63"
 REFERENCEOC43=$BASEDIR"/data/ReferenceCDS/OC43"
 
-
 HYPHY=$BASEDIR"/scripts/hyphy-develop/HYPHYMP"
 RES=$BASEDIR"/scripts/hyphy-develop/res"
 HYPHYMPI=$BASEDIR"/scripts/hyphy-develop/HYPHYMPI"
-
 MAFFT="/usr/bin/mafft"
 
 # Helper function
@@ -74,14 +72,12 @@ function run_gene {
     #3b
     #$HYPHY LIBPATH=$RES $POSTMSA --protein-msa $GENE"_protein.msa" --nucleotide-sequences $GENE"_nuc.fas" --output  $GENE"_CODON_AWARE_ALN_all.fas" --compressed No
     
-    
     mkdir -p $BASEDIR"/analysis/Alignments"
     mkdir -p $BASEDIR"/analysis/Alignments"/$OUTPUTDIR
     mkdir -p $BASEDIR"/analysis/Alignments"/$OUTPUTDIR/nucleotide
     mkdir -p $BASEDIR"/analysis/Alignments"/$OUTPUTDIR/protein
     mkdir -p $BASEDIR"/analysis/Alignments"/$OUTPUTDIR/compressed
     #mkdir -p $BASEDIR"/analysis/Alignments"/$OUTPUTDIR/all
-    
     
     DIR=$(dirname "${GENE}")
     mv $DIR/*_nuc.fas $BASEDIR"/analysis/Alignments"/$OUTPUTDIR/nucleotide
