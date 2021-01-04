@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N Beta_CODON_AWARE_MSA
+#PBS -N HCov_CODON_AWARE_MSA
 #PBS -l walltime=999:00:00
 #PBS -l nodes=1:ppn=64
 #@USAGE: qsub -V -q epyc run_blastn_codon_aware_msa.sh

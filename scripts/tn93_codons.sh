@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N Beta_tn93_codons
+#PBS -N HCoV_tn93_codons
 #PBS -l walltime=999:00:00
 
 #@USAGE: qsub -V -q epyc tn93_codons.sh

@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N Beta_TN93_Cluster
+#PBS -N HCoV_TN93_Cluster
 #PBS -l walltime=999:00:00
 #@USAGE: qsub -V -q epyc tn93_cluster.sh
 clear

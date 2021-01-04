@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N Beta_MEME_aBSREL_BUSTEDS
+#PBS -N HCoV_MEME_aBSREL_BUSTEDS
 #PBS -l walltime=999:00:00
 #PBS -l nodes=1:ppn=64
 

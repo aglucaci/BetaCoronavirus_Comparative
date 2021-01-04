@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N Beta_MERGEAlignments
+#PBS -N HCoV_MERGEAlignments
 #PBS -l nodes=1:ppn=28
 #PBS -l walltime=999:00:00
 

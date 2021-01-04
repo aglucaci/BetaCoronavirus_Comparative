@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N Beta_raxmlHPC-MPI
+#PBS -N HCoV_raxmlHPC-MPI
 #PBS -l nodes=1:ppn=16
 #PBS -l walltime=999:00:00
 

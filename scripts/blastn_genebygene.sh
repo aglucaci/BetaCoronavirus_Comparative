@@ -59,6 +59,7 @@ sed -i "s/ /_/g" $BASEDIR/data/VIPR/HKU1/GenomicFastaResults.fasta
 
 # make blast db of the VIPR results
 echo "# Creating blastdb's"
+#the binary should already exist on silverback
 /usr/bin/makeblastdb -in $BASEDIR/data/VIPR/MERS/GenomicFastaResults.fasta -dbtype nucl -out MERS_db
 /usr/bin/makeblastdb -in $BASEDIR/data/VIPR/SARS/GenomicFastaResults.fasta -dbtype nucl -out SARS_db
 /usr/bin/makeblastdb -in $BASEDIR/data/VIPR/SARS2/GenomicFastaResults.fasta -dbtype nucl -out SARS2_db

@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N Beta_RELAX_Contrast-FEL
+#PBS -N HCoV_RELAX_Contrast-FEL
 #PBS -l nodes=1:ppn=64
 #PBS -l walltime=999:00:00
 
