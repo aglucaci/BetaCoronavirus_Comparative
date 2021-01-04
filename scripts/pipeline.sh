@@ -20,7 +20,7 @@ bash install_raxml_ng.sh
 #bash install_modeltestng.sh
 echo "###################################"
 
-BASEDIR="/home/aglucaci/BetaCoronavirus_Comparative"
+BASEDIR="/home/aglucaci/Coronavirus_Comparative"
 
 echo "Base directory set as: "$BASEDIR
 
