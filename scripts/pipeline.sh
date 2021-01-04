@@ -13,9 +13,10 @@ echo ""
 echo "## Installing some dependencies..."
 # Dependencies (Installers)
 # MAFFT (already installed)
-#bash install_hyphy.sh
-#bash install_tn93.sh
-#bash install_raxml.sh
+bash install_hyphy.sh
+bash install_tn93.sh
+bash install_raxml.sh
+bash install_raxml_ng.sh
 #bash install_modeltestng.sh
 echo "###################################"
 
