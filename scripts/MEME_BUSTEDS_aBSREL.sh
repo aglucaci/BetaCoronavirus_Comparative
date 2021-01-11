@@ -1,10 +1,11 @@
 #!/bin/bash
 #PBS -N HCoV_MEME_aBSREL_BUSTEDS
 #PBS -l walltime=999:00:00
-#PBS -l nodes=1:ppn=64
+#PBS -l nodes=1:ppn=28
 
-#@Usage: qsub -V -q epyc -l nodes=1:ppn=64 MEME_BUSTEDS_aBSREL.sh
-
+#@Usage: qsub -V -q epyc -l nodes=1:ppn=28 MEME_BUSTEDS_aBSREL.sh
+NP=28
+# Make sure NP agrees with PBS script
 
 #BASEDIR="/home/aglucaci/Coronavirus_Comparative_Analysis_August_2020"
 BASEDIR=$1
@@ -55,24 +56,24 @@ for virus in MERS SARS 229E OC43 NL63 HKU1 SARS2; do
         then
             echo ""
         else  
-            echo mpirun -np 64 $HYPHY LIBPATH=$RES $MEME --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --output $OUTPUTDIRMEME"/"$f".MEME.json" --branches Internal
-            mpirun -np 64 $HYPHY LIBPATH=$RES $MEME --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --output $OUTPUTDIRMEME"/"$f".MEME.json" --branches Internal
+            echo mpirun -np $NP $HYPHY LIBPATH=$RES $MEME --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --output $OUTPUTDIRMEME"/"$f".MEME.json" --branches Internal
+            mpirun -np $NP $HYPHY LIBPATH=$RES $MEME --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --output $OUTPUTDIRMEME"/"$f".MEME.json" --branches Internal
         fi
 
         if [ -s $OUTPUTDIRaBSREL"/"$f".aBSREL.json" ];
         then
             echo ""
         else
-            echo mpirun -np 64 $HYPHY LIBPATH=$RES $ABSREL --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --output $OUTPUTDIRaBSREL"/"$f".aBSREL.json" --branches Internal
-            mpirun -np 64 $HYPHY LIBPATH=$RES $ABSREL --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --output $OUTPUTDIRaBSREL"/"$f".aBSREL.json" --branches Internal
+            echo mpirun -np $NP $HYPHY LIBPATH=$RES $ABSREL --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --output $OUTPUTDIRaBSREL"/"$f".aBSREL.json" --branches Internal
+            mpirun -np $NP $HYPHY LIBPATH=$RES $ABSREL --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --output $OUTPUTDIRaBSREL"/"$f".aBSREL.json" --branches Internal
         fi
 
         if [ -s $OUTPUTDIRBUSTEDS"/"$f".BUSTEDS.json" ];
         then
             echo ""
         else
-            echo mpirun -np 64 $HYPHY LIBPATH=$RES $BUSTEDS --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --srv Yes --output $OUTPUTDIRBUSTEDS"/"$f".BUSTEDS.json" --branches Internal
-            mpirun -np 64 $HYPHY LIBPATH=$RES $BUSTEDS --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --srv Yes --output $OUTPUTDIRBUSTEDS"/"$f".BUSTEDS.json" --branches Internal
+            echo mpirun -np $NP $HYPHY LIBPATH=$RES $BUSTEDS --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --srv Yes --output $OUTPUTDIRBUSTEDS"/"$f".BUSTEDS.json" --branches Internal
+            mpirun -np $NP $HYPHY LIBPATH=$RES $BUSTEDS --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --srv Yes --output $OUTPUTDIRBUSTEDS"/"$f".BUSTEDS.json" --branches Internal
         fi
 
         # SLAC
@@ -80,8 +81,8 @@ for virus in MERS SARS 229E OC43 NL63 HKU1 SARS2; do
         then
             echo ""
         else
-            echo mpirun -np 64 $HYPHY LIBPATH=$RES SLAC --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --srv Yes --output $OUTPUTDIRSLAC"/"$f".SLAC.json" --branches All
-            mpirun -np 64 $HYPHY LIBPATH=$RES SLAC --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --srv Yes --output $OUTPUTDIRSLAC"/"$f".SLAC.json" --branches All
+            echo mpirun -np $NP $HYPHY LIBPATH=$RES SLAC --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --srv Yes --output $OUTPUTDIRSLAC"/"$f".SLAC.json" --branches All
+            mpirun -np $NP $HYPHY LIBPATH=$RES SLAC --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --srv Yes --output $OUTPUTDIRSLAC"/"$f".SLAC.json" --branches All
         fi
 
         # FUBAR
@@ -89,10 +90,9 @@ for virus in MERS SARS 229E OC43 NL63 HKU1 SARS2; do
         then
             echo ""
         else
-            echo mpirun -np 64 $HYPHY LIBPATH=$RES FUBAR --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --grid 50 --chains 10 --chain-length 10000000 --burn-in 1000000 --output $OUTPUTDIRFUBAR"/"$f".FUBAR.json"
-            mpirun -np 64 $HYPHY LIBPATH=$RES FUBAR --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --grid 50 --chains 10 --chain-length 10000000 --burn-in 1000000 --output $OUTPUTDIRFUBAR"/"$f".FUBAR.json"
+            echo mpirun -np $NP $HYPHY LIBPATH=$RES FUBAR --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --grid 50 --chains 10 --chain-length 10000000 --burn-in 1000000 --output $OUTPUTDIRFUBAR"/"$f".FUBAR.json"
+            mpirun -np $NP $HYPHY LIBPATH=$RES FUBAR --alignment $gene --tree $TREEDIR/$virus/"RAxML_bestTree."$f --grid 50 --chains 10 --chain-length 10000000 --burn-in 1000000 --output $OUTPUTDIRFUBAR"/"$f".FUBAR.json"
         fi
-
 
         echo ""
     done
